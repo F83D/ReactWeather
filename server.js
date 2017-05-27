@@ -6,13 +6,13 @@ const PORT = process.env.PORT || 3000;
 
 //Permet de rediriger le HTTPS vers HTTP :
 app.use(function (req, res, next){
-  if (req.headers['x-forwarded-proto'] === 'http') 
+  if (req.headers['x-forwarded-proto'] === 'https') 
   {
-    next();
+    res.redirect('http://' + req.hostname + req.url);
   } 
   else 
   {
-    res.redirect('http://' + req.hostname + req.url);
+    next();
   }
 });
 
