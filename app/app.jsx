@@ -7,7 +7,7 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 // var IndexRoute = require('react-router').IndexRoute;
 // var hashHistory = require('react-router').hashHistory;
 
-//On charge notre CSS via foundation :
+//On charge notre template CSS foundation :
 require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 
