@@ -7,6 +7,10 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 // var IndexRoute = require('react-router').IndexRoute;
 // var hashHistory = require('react-router').hashHistory;
 
+//On charge notre CSS via foundation :
+require('style!css!foundation-sites/dist/foundation.min.css');
+$(document).foundation();
+
 var Main = require('Main');
 var Weather = require('Weather');
 var About = require('About');
