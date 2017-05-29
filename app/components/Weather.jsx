@@ -38,7 +38,7 @@ var Weather = React.createClass({
                     erreur: 'La ville n\'a pas été trouvée dans l\'API',
                     etatChargement: false //false = pas encore appelé l'API OU chargement terminé ; true = appel à l'API effectué.
                 });
-                alert(errorMessage);
+                //alert(errorMessage);
             }
         );
     },
