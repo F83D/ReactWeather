@@ -5,9 +5,9 @@ var WeatherMessage = React.createClass({
         // if (this.props.etat === 1)
         // {
             return (
-                <div>
+                <div className='text-center'>
                     <img src={'https://openweathermap.org/img/w/' + this.props.ico + '.png'}/>
-                    <h4>
+                    <h4 className='text-center'>
                         Il fait {this.props.temp}°C, {this.props.description}, à {this.props.location} !
                         <br />
                         La température minimale est de {this.props.tMin}°C alors que la maximale annoncée est de {this.props.tMax}°C.

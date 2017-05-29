@@ -50,7 +50,7 @@ var Weather = React.createClass({
                 if (etatChargement === true)
                 {
                     return(
-                        <h4>En cours de chargement...</h4>
+                        <h4 className='text-center'>En cours de chargement...</h4>
                     );
                 }
                 else if (temp && location)
@@ -62,14 +62,14 @@ var Weather = React.createClass({
                 else if(erreur)
                 {
                     return (
-                        <h4>La ville renseignée n'a pas été trouvée dans l'API.</h4>
+                        <h4 className='text-center'>La ville renseignée n'a pas été trouvée dans l'API.</h4>
                     );
                 }
             }
 
         return (
             <div>
-                <h3>MA METEO</h3>
+                <h3 className='text-center'>MA METEO</h3>
                 <WeatherForm onSearch={this.handleSearch}/>
                 {renderMessage()}
                 {/*<WeatherMessage location={location} temp={temp} tMin={tMin} tMax={tMax} description={description} ico={ico}/>*/}
