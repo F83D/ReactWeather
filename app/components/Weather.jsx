@@ -61,7 +61,7 @@ var Weather = React.createClass({
                         <WeatherMessage location={location} temp={temp} tMin={tMin} tMax={tMax} description={description} ico={ico}/>
                     );
                 }
-                else if(erreur)
+                else if(typeof erreur === 'string')
                 {
                     return (
                         <ErrorModal errorMessage={erreur} />
