@@ -21,12 +21,15 @@ module.exports = {
                     return res.data;
                 }
             },
-            //CORRECTION demandée à la vidéo 58, section 7 - function(res) {
+            //CORRECTION demandée à la vidéo 58, section 7
+            function(res) {
                 //Echec (promise).
-                //CORRECTION demandée à la vidéo 58, section 7 - throw new Error(res.data.message);
-            function(err) {
-                throw new Error('Impossible de récupérer la météo à cet endroit...');
+                //CORRECTION demandée à la vidéo 58, section 7
+                throw new Error(res.data.message);
             }
+            // function(err) {
+            //     throw new Error('Impossible de récupérer la météo à cet endroit...');
+            // }
         );
 
     }

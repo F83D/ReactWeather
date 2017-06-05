@@ -30,7 +30,7 @@ var Weather = React.createClass({
                     tMax: w.main.temp_max,
                     description: w.weather[0].description,
                     ico: w.weather[0].icon,
-                    erreur: undefined,
+                    erreur: null,
                     etatChargement: false //false = pas encore appelé l'API OU chargement terminé ; true = appel à l'API effectué.
                 });
             },
