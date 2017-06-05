@@ -3,6 +3,7 @@ var React = require('react');
 //Composants internes :
 var WeatherMessage = require('WeatherMessage');
 var WeatherForm = require('WeatherForm');
+var ErrorModal = require('ErrorModal');
 
 //API :
 var openWeatherMap = require('openWeatherMap');
@@ -29,13 +30,14 @@ var Weather = React.createClass({
                     tMax: w.main.temp_max,
                     description: w.weather[0].description,
                     ico: w.weather[0].icon,
+                    erreur: undefined,
                     etatChargement: false //false = pas encore appelé l'API OU chargement terminé ; true = appel à l'API effectué.
                 });
             },
             function(errorMessage) {
                 //ERREUR.
                 that.setState({
-                    erreur: 'La ville n\'a pas été trouvée dans l\'API',
+                    erreur: 'La ville ' + location + 'n\'a pas été trouvée dans l\'API OpenWeatherMap !',
                     etatChargement: false //false = pas encore appelé l'API OU chargement terminé ; true = appel à l'API effectué.
                 });
                 //alert(errorMessage);
@@ -62,7 +64,8 @@ var Weather = React.createClass({
                 else if(erreur)
                 {
                     return (
-                        <h4 className='text-center'>La ville renseignée n'a pas été trouvée dans l'API.</h4>
+                        <ErrorModal errorMessage={erreur} />
+                        //<h4 className='text-center'>La ville renseignée n'a pas été trouvée dans l'API.</h4>
                     );
                 }
             }
