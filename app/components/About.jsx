@@ -4,7 +4,7 @@ var About = React.createClass({
     render: function() {
         return (
             <div>
-                <h3 className='text-center'>A PROPOS</h3>
+                <h3 className='text-center page-title'>A PROPOS</h3>
                 <p>
                     Météo by Acoustat a été créée pour apprendre le React !
                 </p>

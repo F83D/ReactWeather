@@ -11,6 +11,9 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 
+//On charge notre CSS perso :
+require('style!css!applicationStyles');
+
 var Main = require('Main');
 var Weather = require('Weather');
 var About = require('About');

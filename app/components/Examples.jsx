@@ -5,7 +5,7 @@ var Examples = React.createClass({
     render: function() {
         return (
             <div>
-                <h3 className='text-center'>EXEMPLES</h3>
+                <h3 className='text-center page-title'>EXEMPLES</h3>
                 <p>Voici quelques exemples de villes pour tester (et plein d'autres à votre guise) :</p>
                 <ol>
                     <li>
