@@ -12,7 +12,7 @@ require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 
 //On charge notre CSS perso :
-require('style!css!applicationStyles');
+require('style!css!sass!applicationStyles');
 
 var Main = require('Main');
 var Weather = require('Weather');
