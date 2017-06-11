@@ -17,7 +17,10 @@ var Weather = React.createClass({
     handleSearch: function(location) {
         debugger;
         this.setState({
-            etatChargement: true //false = pas encore appelé l'API OU chargement terminé ; true = appel à l'API effectué.
+            etatChargement: true, //false = pas encore appelé l'API OU chargement terminé ; true = appel à l'API effectué.
+            erreur: null,
+            location: undefined,
+            temp: undefined 
         });
         var that = this; //Permet de stocker l'objet this qui n'est plus accessible dans la fonction then (succès).
         openWeatherMap.getTemp(location).then(
@@ -43,6 +46,30 @@ var Weather = React.createClass({
                 //alert(errorMessage);
             }
         );
+    },
+    componentDidMount: function() {
+        //On récupère le contenu de la variable transmise aprés le '?' via 'query' :
+        var location = this.props.location.query.location;
+
+        if (location && location.length > 0)
+        {
+            //On cherche la météo :
+            this.handleSearch(location);
+            //On réinitialise l'URL :
+            window.location.hash = '#/';
+        }
+    },
+    componentWillReceiveProps: function(newProps) {
+        //On récupère le contenu de la variable transmise aprés le '?' via 'query' :
+        var location = newProps.location.query.location;
+
+        if (location && location.length > 0)
+        {
+            //On cherche la météo :
+            this.handleSearch(location);
+            //On réinitialise l'URL :
+            window.location.hash = '#/';
+        }
     },
     render: function() {
         //Variables d'instance :
